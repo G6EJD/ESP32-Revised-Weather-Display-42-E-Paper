@@ -565,7 +565,7 @@ void Convert_Readings_to_Imperial() {
 //#########################################################################################
 int StartWiFi() {
   int connAttempts = 0;
-  Serial.print(F("\r\nConnecting to: ")); Serial.println(String(ssid1));
+  Serial.print(F("\r\nConnecting to: ")); Serial.println(String(ssid));
   WiFi.disconnect();
   WiFi.mode(WIFI_STA);
   WiFi.begin(ssid, password);
