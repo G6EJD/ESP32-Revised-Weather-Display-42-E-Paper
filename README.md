@@ -6,3 +6,5 @@ Place all files in the same folder.
 You must have Adafruit_GFX library installed.
 
 You must install GxEPD2 library.
+
+![Screenshot](screenshot.png)
