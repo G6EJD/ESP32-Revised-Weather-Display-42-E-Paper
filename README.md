@@ -7,4 +7,4 @@ You must have Adafruit_GFX library installed.
 
 You must install GxEPD2 library.
 
-![Screenshot](screenshot.png)
+![Screenshot](DisplaySample_1.jpg)
