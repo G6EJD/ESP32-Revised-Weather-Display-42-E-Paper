@@ -7,4 +7,4 @@ You must have Adafruit_GFX library installed.
 
 You must install GxEPD2 library.
 
-![](DisplaySample_1.jpg)
+![ESP32-Revised-Weather-Display-42-E-Paper](DisplaySample_1.jpg)
