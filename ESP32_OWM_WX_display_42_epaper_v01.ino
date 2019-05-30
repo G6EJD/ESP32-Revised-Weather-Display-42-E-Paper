@@ -109,7 +109,7 @@ WiFiClient client; // wifi client object
 void setup() {
   Serial.begin(115200);
   display.init(115200);
-  display.setRotation(1);
+  display.setRotation(0);
   display.setTextSize(0);
   display.setFont(&DejaVu_Sans_Bold_11);
   display.setTextColor(GxEPD_BLACK);
@@ -178,7 +178,7 @@ void DisplayMainWeatherSection(int x, int y) {
   if (WxConditions[0].Forecast1 != "") Wx_Description += " & " +  WxConditions[0].Forecast1;
   if (WxConditions[0].Forecast2 != "" && WxConditions[0].Forecast1 != WxConditions[0].Forecast2) Wx_Description += " & " +  WxConditions[0].Forecast2;
   display.setFont(&FreeMonoBold12pt7b);
-  drawString(SCREEN_WIDTH / 2, y - 3, TitleCase(Wx_Description), CENTER);
+  drawStringMaxWidth(x, y - 3, TitleCase(Wx_Description), LEFT);
   display.setFont(&DejaVu_Sans_Bold_11);
 }
 //#########################################################################################
@@ -968,12 +968,18 @@ void drawString(int x, int y, String text, alignment align) {
 void drawStringMaxWidth(int x, int y, int text_width, String text, alignment align) {
   int16_t  x1, y1; //the bounds of x,y and w and h of the variable 'text' in pixels.
   uint16_t w, h;
+  if (text.length() > text_width * 2) text = text.substring(0, text_width * 2); // Truncate if too long for 2 rows of text
   display.getTextBounds(text, x, y, &x1, &y1, &w, &h);
   if (align == RIGHT)  x = x - w;
   if (align == CENTER) x = x - w / 2;
   display.setCursor(x, y + h);
-  display.println(text);
+  display.println(text.substring(0, text_width));
+  if (text.length() > text_width) {
+    display.setCursor(x, y + h * 2);
+    display.println(text.substring(text_width));
+  }
 }
+//#########################################################################################
 void DisplayWxPerson(int x, int y, String IconName) {
   display.drawRect(x, y, 130, 130, GxEPD_BLACK);
   // NOTE: Using 'drawInvertedBitmap' and not 'drawBitmap' so that images are WYSIWYG, otherwise all images need to be inverted
