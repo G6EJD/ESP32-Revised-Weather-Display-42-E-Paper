@@ -567,6 +567,7 @@ int StartWiFi() {
   int connAttempts = 0;
   Serial.print(F("\r\nConnecting to: ")); Serial.println(String(ssid));
   WiFi.disconnect();
+  IPAddress dns(8, 8, 8, 8); // Google DNS
   WiFi.mode(WIFI_STA);
   WiFi.begin(ssid, password);
   while (WiFi.status() != WL_CONNECTED ) {
