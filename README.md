@@ -8,6 +8,6 @@ You must have Adafruit_GFX library installed.
 You must install GxEPD2 and JSON libraries.
 
 <p align="center">
-  <img src="https://github.com/G6EJD/ESP32-Revised-Weather-Display-42-E-Paper/blob/master/DIsplaySample_1.jpg" width="350" title="hover text">
+  <img src="https://github.com/G6EJD/ESP32-Revised-Weather-Display-42-E-Paper/blob/master/DisplaySample_1.jpg" width="350" title="hover text">
 </p>
 
