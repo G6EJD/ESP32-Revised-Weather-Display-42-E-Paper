@@ -306,8 +306,8 @@ void DisplayRain(int x, int y) {
 void DisplayAstronomySection(int x, int y) {
   display.drawRect(x, y + 64, 161, 62, GxEPD_BLACK);
   drawString(x + 4,  y + 67,  "Sun Rise/Set", LEFT);
-  drawString(x + 20, y + 82,  ConvertUnixTime(WxConditions[0].Sunrise).substring(0, 5), LEFT);
-  drawString(x + 20, y + 96,  ConvertUnixTime(WxConditions[0].Sunset).substring(0, 5), LEFT);
+  drawString(x + 20, y + 82,  ConvertUnixTime(WxConditions[0].Sunrise).substring(0, (Units == “M”?5:7)), LEFT);
+  drawString(x + 20, y + 96,  ConvertUnixTime(WxConditions[0].Sunset).substring(0, (Units == “M”?5:7)), LEFT);
   time_t now = time(NULL);
   struct tm * now_utc  = gmtime(&now);
   const int day_utc = now_utc->tm_mday;
