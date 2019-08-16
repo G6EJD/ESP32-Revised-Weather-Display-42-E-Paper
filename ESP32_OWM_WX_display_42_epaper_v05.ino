@@ -44,7 +44,7 @@ static const uint8_t EPD_SCK  = 18; //Pin-18 on Lolin D32
 static const uint8_t EPD_MISO = 19; //Pin-19 on Lolin D32 Master-In Slave-Out not used, as no data from display
 static const uint8_t EPD_MOSI = 23; //Pin-23 on Lolin D32
 
-GxEPD2_BW<GxEPD2_420, GxEPD2_420::HEIGHT> display(GxEPD2_420(/*CS=5*/ SS, /*DC=*/ 17, /*RST=*/ 16, /*BUSY=*/ 4));
+GxEPD2_BW<GxEPD2_420, GxEPD2_420::HEIGHT> display(GxEPD2_420(EPD_SS, EPD_DC, EPD_RST, EPD_BUSY));
 
 //################  VERSION  ##########################
 String version = "v5";       // Version of this program
