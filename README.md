@@ -11,3 +11,5 @@ You must install GxEPD2 and JSON libraries.
   <img src="https://github.com/G6EJD/ESP32-Revised-Weather-Display-42-E-Paper/blob/master/DisplaySample_1.jpg" width="350" title="hover text">
 </p>
 
+Wiring Schematic for ALL Waveshare E-Paper Displays
+![alt_text, width="300"](/Schematic.JPG)
